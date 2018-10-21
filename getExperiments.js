@@ -21,17 +21,17 @@ export default function getExperiments(doRateWhenAvoiding, doRateWhenNotAvoiding
             })()
         },
         {
-            description: 'Avoid if have more than 2 times in last 7 days including today',
+            description: 'Avoid if have 2 or more times in last 6 days',
             days: (() => {
                 const days = [];
                 const timesPerWkLimit = 2;
-                const lastSevenDays = [false, false, false, false, false, false, false];
+                const lastSixDays = [false, false, false, false, false, false];
                 for (let i = 0; i < dayCount; i++) {
-                    const lastSevenDaysFailedCount = lastSevenDays.reduce((total, value) => total + value, 0);
-                    const avoiding = lastSevenDaysFailedCount > timesPerWkLimit;
+                    const lastSixDaysFailedCount = lastSixDays.reduce((total, value) => total + value, 0);
+                    const avoiding = lastSixDaysFailedCount >= timesPerWkLimit;
                     const failed = simulateIfDayFailed(avoiding);
-                    lastSevenDays.shift();//Remove first element from array
-                    lastSevenDays.push(failed);
+                    lastSixDays.shift();//Remove first element from array
+                    lastSixDays.push(failed);
                     days.push({avoiding: avoiding, failed: failed})
                 }
                 return days;
