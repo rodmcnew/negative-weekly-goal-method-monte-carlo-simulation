@@ -57,6 +57,16 @@ export default function getExperiments(doRateWhenAvoiding, doRateWhenNotAvoiding
                 }
                 return days;
             })()
+        },
+        {
+            description: 'Avoid never',
+            days: (() => {
+                const days = [];
+                for (let i = 0; i < dayCount; i++) {
+                    days.push({avoiding: true, failed: simulateIfDayFailed(false)})
+                }
+                return days;
+            })()
         }
     ];
 }
