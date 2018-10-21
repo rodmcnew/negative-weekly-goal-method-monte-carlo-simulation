@@ -1,5 +1,5 @@
 export default function getExperiments(doRateWhenAvoiding, doRateWhenNotAvoiding, yearsToSimulate) {
-    let dayCount = yearsToSimulate * 365;
+    const dayCount = yearsToSimulate * 365;
 
     function simulateIfDayFailed(avoiding) {
         if (avoiding) {
