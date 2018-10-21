@@ -6,3 +6,6 @@ This is also is Rod's first Vue.js project in order to try out Vue.js and to try
 
 Dev Notes:
 - If running in WebStorm built-in server, debug mode must be used or the ES6 module loading will be blocked by WebStorm security
+
+Could have in future:
+- Allow args of getExperiments function to be changed in real time in UI

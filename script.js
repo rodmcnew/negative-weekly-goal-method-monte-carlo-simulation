@@ -4,15 +4,18 @@ Vue.component('experiment-display', {
     props: ['experiment'],
     data: function () {
         const days = this.experiment.days;
-        let failCount = days.reduce((total, day) => total + (day.failed ? 1 : 0), 0);
+        const failCount = days.reduce((total, day) => total + (day.failed ? 1 : 0), 0);
+        const netFailRate = (failCount / days.length);
         return {
-            netFailRate: (failCount / days.length).toFixed(2)
+            avgPerDay: netFailRate.toFixed(2),
+            avgPerWk: (netFailRate * 7).toFixed(2)
         };
     },
     template: `
         <div>
                 <div class="experimentDescription">"{{experiment.description}}"</div>
-                <div>Net fail rate: {{netFailRate}}</div>
+                <div>Average times per day: {{avgPerDay}}</div>
+                <div>Average times per wk: {{avgPerWk}}</div>
                 <span v-for="(day,index) in experiment.days">
                     <div class="weekBarrier" v-if="index % 7 === 0"></div>
                     <div class="experimentDay" v-bind:class="{dayFailed: day.failed, dayAvoiding:day.avoiding}"></div>
