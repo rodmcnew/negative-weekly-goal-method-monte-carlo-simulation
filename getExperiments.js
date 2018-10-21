@@ -39,7 +39,7 @@ export default function getExperiments(doRateWhenAvoiding, doRateWhenNotAvoiding
             })()
         },
         {
-            description: 'Avoid if have more than 2 times in current week',
+            description: 'Avoid if have more 2 or more times in current week',
             days: (() => {
                 const days = [];
                 const daysPerWk = 7;
@@ -49,7 +49,7 @@ export default function getExperiments(doRateWhenAvoiding, doRateWhenNotAvoiding
                     if (i % daysPerWk === 0) {
                         weekFailedCount = 0;
                     }
-                    const avoiding = weekFailedCount > timesPerWkLimit;
+                    const avoiding = weekFailedCount >= timesPerWkLimit;
                     const failed = simulateIfDayFailed(avoiding);
                     if (failed) {
                         weekFailedCount++;
