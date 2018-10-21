@@ -15,7 +15,8 @@ export default function getExperiments(doRateWhenAvoiding, doRateWhenNotAvoiding
             days: (() => {
                 const days = [];
                 for (let i = 0; i < dayCount; i++) {
-                    days.push({avoiding: true, failed: simulateIfDayFailed(true)})
+                    const avoiding = true;
+                    days.push({avoiding: avoiding, failed: simulateIfDayFailed(avoiding)})
                 }
                 return days;
             })()
@@ -63,7 +64,8 @@ export default function getExperiments(doRateWhenAvoiding, doRateWhenNotAvoiding
             days: (() => {
                 const days = [];
                 for (let i = 0; i < dayCount; i++) {
-                    days.push({avoiding: true, failed: simulateIfDayFailed(false)})
+                    const avoiding = false;
+                    days.push({avoiding: avoiding, failed: simulateIfDayFailed(avoiding)})
                 }
                 return days;
             })()
