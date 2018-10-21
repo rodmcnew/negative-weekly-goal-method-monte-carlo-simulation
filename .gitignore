@@ -1,2 +1,2 @@
 .idea
-node_modules
+#node_modules #not ignored so can publish to gh-pages easily
