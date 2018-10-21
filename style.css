@@ -1,0 +1,25 @@
+.experimentDay {
+    display: inline-block;
+    background-color: lightgreen;
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+}
+
+.experimentDay.dayFailed {
+    background-color: lightcoral;
+}
+
+.weekBarrier {
+    display: block;
+}
+
+.experiment {
+    float: left;
+    width: 180px;
+    padding: 0 5px;
+}
+
+.experiment .experimentTextInfo{
+    height: 100px;
+}
