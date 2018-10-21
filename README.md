@@ -1,4 +1,4 @@
-This is running at [http://rodmcnew.github.io/negative-weekly-goal-method-monte-carlo-simulation](http://rodmcnew.github.io/negative-weekly-goal-method-monte-carlo-simulation)
+This is running at [https://rodmcnew.github.io/weekly-goal-method-monte-carlo-simulation/](https://rodmcnew.github.io/weekly-goal-method-monte-carlo-simulation/)
 
 This is a small experiment that compares different methods of executing negative weekly goals.
 
