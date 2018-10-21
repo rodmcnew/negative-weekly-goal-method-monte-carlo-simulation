@@ -3,11 +3,14 @@
     background-color: lightgreen;
     width: 20px;
     height: 20px;
-    border: 1px solid black;
+    border: 2px solid blue;
 }
 
 .experimentDay.dayFailed {
     background-color: lightcoral;
+}
+.experimentDay.dayAvoiding {
+    border-color: transparent;
 }
 
 .weekBarrier {
@@ -16,10 +19,14 @@
 
 .experiment {
     float: left;
-    width: 180px;
-    padding: 0 5px;
+    width: 200px;
+    padding: 0 2em;
 }
 
-.experiment .experimentTextInfo{
-    height: 100px;
+.experiment .experimentDescription{
+    min-height: 5em;
+}
+
+.globalInfo{
+    margin-bottom: 2em;
 }
